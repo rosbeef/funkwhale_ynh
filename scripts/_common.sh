@@ -10,6 +10,7 @@ pkg_dependencies="curl python3-pip python3-venv git unzip libldap2-dev libsasl2-
 	redis-server \
 	`# add arm support` \
 	zlib1g-dev libffi-dev libssl-dev"
+python_version="$(python3 -V | cut -d' ' -f2 | cut -d. -f1-2)"
 
 #=================================================
 # PERSONAL HELPERS
