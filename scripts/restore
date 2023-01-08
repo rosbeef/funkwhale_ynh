@@ -88,6 +88,9 @@ ynh_script_progression --message="Reinstalling dependencies..." --weight=1
 # Define and install dependencies
 ynh_install_app_dependencies $pkg_dependencies
 
+# Install synapse in virtualenv
+install_sources
+
 #=================================================
 # RESTORE THE NGINX CONFIGURATION
 #=================================================
