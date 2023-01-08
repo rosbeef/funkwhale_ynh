@@ -42,8 +42,8 @@ install_sources() {
     fi
     
     pushd $final_path
-	 test -e $final_path/virtualenv/bin/python3 ||python3 -m venv $final_path/virtualenv
-	source $final_path/virtualenv/bin/activate
+	 test -e $final_path/bin/python3 ||python3 -m venv $final_path
+	source $final_path/bin/activate
 	pip install --upgrade pip
 	pip install --upgrade setuptools
 	ynh_exec_warn_less pip install wheel
