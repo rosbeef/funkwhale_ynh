@@ -29,15 +29,15 @@ install_sources() {
     mkdir -p $final_path
     chown $app:root -R $final_path
 
-    if [ -n "$(uname -m | grep arm)" ]
-    then
-        # Clean old file, sometime it could make some big issues if we don't do this !!
-        ynh_secure_remove --file=$final_path/bin
-        ynh_secure_remove --file=$final_path/lib
-        ynh_secure_remove --file=$final_path/include
-        ynh_secure_remove --file=$final_path/share
-        #ynh_setup_source --dest_dir $final_path/ --source_id "armv7_$(lsb_release --codename --short)"
-    else
+#    if [ -n "$(uname -m | grep arm)" ]
+#     then
+#        # Clean old file, sometime it could make some big issues if we don't do this !!
+#        ynh_secure_remove --file=$final_path/bin
+#        ynh_secure_remove --file=$final_path/lib
+#        ynh_secure_remove --file=$final_path/include
+#        ynh_secure_remove --file=$final_path/share
+#        #ynh_setup_source --dest_dir $final_path/ --source_id "armv7_$(lsb_release --codename --short)"
+#    else
         # Install rustup is not already installed
         # We need this to be able to install cryptgraphy
         export PATH="$PATH:$final_path/.cargo/bin:$final_path/.local/bin:/usr/local/sbin"
@@ -64,7 +64,7 @@ install_sources() {
         set +$u_arg;
         deactivate
         set -$u_arg;
-    fi
+#    fi
 }
 
 #=================================================
