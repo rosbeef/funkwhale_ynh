@@ -36,7 +36,7 @@ install_sources() {
         ynh_secure_remove --file=$final_path/lib
         ynh_secure_remove --file=$final_path/include
         ynh_secure_remove --file=$final_path/share
-        ynh_setup_source --dest_dir $final_path/ --source_id "armv7_$(lsb_release --codename --short)"
+        #ynh_setup_source --dest_dir $final_path/ --source_id "armv7_$(lsb_release --codename --short)"
     else
         # Install rustup is not already installed
         # We need this to be able to install cryptgraphy
