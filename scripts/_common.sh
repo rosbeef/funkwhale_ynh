@@ -14,7 +14,7 @@ pkg_dependencies="curl python3-pip python3-venv git unzip libldap2-dev libsasl2-
 #=================================================
 # PERSONAL HELPERS
 #=================================================
-install_source() {
+install_sources() {
     # Clean venv is it was on python with an old version in case major upgrade of debian
     if [ ! -e $final_path/lib/python$python_version ]; then
         ynh_secure_remove --file=$final_path/bin
@@ -26,7 +26,7 @@ install_source() {
     fi
 
     mkdir -p $final_path
-    chown $pgadmin_user:root -R $final_path
+    chown $app:root -R $final_path
 
     if [ -n "$(uname -m | grep arm)" ]
     then
