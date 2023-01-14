@@ -29,6 +29,7 @@ install_sources() {
     mkdir -p $final_path
     chown $app:root -R $final_path
 
+    pushd $final_path
     if [ -n "$(uname -m | grep arm)" ]
      then
         # Install rustup is not already installed
@@ -41,7 +42,6 @@ install_sources() {
         fi
     fi
     
-    pushd $final_path
 	 test -e $final_path/bin/python3 ||python3 -m venv $final_path
 	source $final_path/bin/activate
 	pip install --upgrade pip
