@@ -37,8 +37,9 @@ install_sources() {
         export PATH="$PATH:$final_path/.cargo/bin:$final_path/.local/bin:/usr/local/sbin"
         if [ -e $final_path/.rustup ]; then
             sudo -u "$app" env PATH=$PATH rustup update
-        else
-            sudo -u "$app" bash -c 'curl -sSf -L https://static.rust-lang.org/rustup.sh | sh -s -- -y --default-toolchain=stable --profile=minimal'
+        else 
+		rustup default stable
+            sudo -u "$app" bash -c 'curl -sSf -L https://static.rust-lang.org/rustup.sh | sh -s -- -y --default-toolchain=stable --profile=stable'
         fi
     fi
     
