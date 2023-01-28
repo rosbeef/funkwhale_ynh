@@ -40,6 +40,7 @@ install_sources() {
             sudo -u "$app" env PATH=$PATH rustup update
         else 
             sudo -u "$app" bash -c 'curl -sSf -L https://static.rust-lang.org/rustup.sh | sh -s -- -y --default-toolchain=stable --profile=minimal'
+            sudo -u "$app" env PATH=$PATH rustup default stable
         fi
     fi
     
